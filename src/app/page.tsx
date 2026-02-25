@@ -14,6 +14,7 @@ import {
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { AdPlaceholder } from "@/components/ad-placeholder";
 
 const calculators = [
   {
@@ -106,6 +107,11 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Leaderboard Ad after Hero */}
+      <section className="container mx-auto px-4 sm:px-8 -mt-10">
+        <AdPlaceholder type="leaderboard" />
+      </section>
+
       {/* Calculator Grid */}
       <section id="calculators" className="container mx-auto px-4 sm:px-8">
         <div className="flex flex-col md:flex-row justify-between items-end gap-6 mb-12">
@@ -189,12 +195,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Ad Placeholder Section */}
-      <section className="container mx-auto px-4 sm:px-8 text-center py-10">
-        <div className="min-h-[90px] flex items-center justify-center bg-muted/30 border border-dashed rounded-lg p-4 text-xs text-muted-foreground uppercase tracking-widest font-bold">
-          {/* PASTE ADSENSE CODE HERE */}
-          Advertisement (728x90 Billboard)
-        </div>
+      {/* Bottom Leaderboard Ad */}
+      <section className="container mx-auto px-4 sm:px-8">
+        <AdPlaceholder type="leaderboard" />
       </section>
     </div>
   );

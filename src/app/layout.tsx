@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ModeToggle } from "@/components/mode-toggle";
+import { GoogleAnalytics } from "@/components/google-analytics";
+import { CookieConsent } from "@/components/cookie-consent";
 import { Calculator } from "lucide-react";
 import Link from "next/link";
 
@@ -48,6 +50,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
       >
+        <GoogleAnalytics />
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
@@ -112,12 +115,18 @@ export default function RootLayout({
                   </ul>
                 </div>
               </div>
-              <div className="mt-12 pt-8 border-t flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-muted-foreground">
-                <p>&copy; 2026 Calcora. All rights reserved.</p>
-                <p>Designed for Vercel • US Market Priority</p>
+              <div className="mt-12 pt-8 border-t space-y-4">
+                <p className="text-center text-[11px] text-muted-foreground/50 leading-relaxed">
+                  We use ads to keep Calcora free. Your calculator data never leaves your browser.
+                </p>
+                <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-muted-foreground">
+                  <p>&copy; 2026 Calcora. All rights reserved.</p>
+                  <p>Designed for Vercel • US Market Priority</p>
+                </div>
               </div>
             </div>
           </footer>
+          <CookieConsent />
         </ThemeProvider>
       </body>
     </html>

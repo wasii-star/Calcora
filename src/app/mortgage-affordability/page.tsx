@@ -21,6 +21,7 @@ import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { calculateMortgage, MortgageResult } from "@/lib/calculations";
 import { AdPlaceholder } from "@/components/ad-placeholder";
+import { CalculatorLayoutWrapper } from "@/components/calculator-layout-wrapper";
 import {
     Chart as ChartJS,
     ArcElement,
@@ -79,153 +80,157 @@ export default function MortgagePage() {
     if (!results) return null;
 
     return (
-        <div className="container mx-auto px-4 py-12 max-w-6xl">
-            <Link href="/" className="inline-flex items-center gap-2 mb-8 text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
-                <ArrowLeft className="h-4 w-4" />
-                Back to Dashboard
-            </Link>
+        <CalculatorLayoutWrapper>
+            <div className="max-w-6xl">
+                <Link href="/" className="inline-flex items-center gap-2 mb-8 text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+                    <ArrowLeft className="h-4 w-4" />
+                    Back to Dashboard
+                </Link>
 
-            <div className="flex flex-col gap-4 mb-12">
-                <div className="flex items-center gap-3">
-                    <div className="p-2 h-10 w-10 flex items-center justify-center rounded-lg bg-indigo-500/10 text-indigo-600">
-                        <Home className="h-6 w-6" />
+                <div className="flex flex-col gap-4 mb-12">
+                    <div className="flex items-center gap-3">
+                        <div className="p-2 h-10 w-10 flex items-center justify-center rounded-lg bg-indigo-500/10 text-indigo-600">
+                            <Home className="h-6 w-6" />
+                        </div>
+                        <h1 className="text-4xl font-bold tracking-tight">Mortgage Affordability Calculator</h1>
                     </div>
-                    <h1 className="text-4xl font-bold tracking-tight">Mortgage Affordability Calculator</h1>
-                </div>
-                <p className="text-lg text-muted-foreground max-w-3xl">
-                    Get a professional-grade breakdown of your monthly payments and see if your dream home fits your 2026 budget goals.
-                </p>
-            </div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-                {/* Left Column: Inputs */}
-                <div className="lg:col-span-5 space-y-6">
-                    <Card>
-                        <CardHeader>
-                            <CardTitle>Loan Details</CardTitle>
-                        </CardHeader>
-                        <CardContent className="space-y-6">
-                            <div className="space-y-4">
-                                <div className="flex justify-between font-medium">
-                                    <Label>Home Price</Label>
-                                    <span className="text-primary">${homePrice.toLocaleString()}</span>
-                                </div>
-                                <Slider value={[homePrice]} min={50000} max={2000000} step={5000} onValueChange={(v) => setHomePrice(v[0])} />
-                            </div>
-
-                            <div className="space-y-4 font-medium">
-                                <div className="flex justify-between">
-                                    <Label>Down Payment</Label>
-                                    <span className="text-primary">${downPayment.toLocaleString()} ({Math.round((downPayment / homePrice) * 100)}%)</span>
-                                </div>
-                                <Slider value={[downPayment]} min={0} max={homePrice} step={1000} onValueChange={(v) => setDownPayment(v[0])} />
-                            </div>
-
-                            <div className="grid grid-cols-2 gap-4">
-                                <div className="space-y-2">
-                                    <Label>Interest Rate (%)</Label>
-                                    <Input type="number" value={rate} onChange={(e) => setRate(Number(e.target.value))} step="0.1" />
-                                </div>
-                                <div className="space-y-2">
-                                    <Label>Loan Term (Years)</Label>
-                                    <Input type="number" value={term} onChange={(e) => setTerm(Number(e.target.value))} />
-                                </div>
-                            </div>
-                        </CardContent>
-                    </Card>
-
-                    <Card>
-                        <CardHeader>
-                            <CardTitle>Financial Profile</CardTitle>
-                        </CardHeader>
-                        <CardContent className="space-y-6">
-                            <div className="space-y-2">
-                                <Label>Annual Household Income ($)</Label>
-                                <Input type="number" value={income} onChange={(e) => setIncome(Number(e.target.value))} />
-                            </div>
-                            <div className="space-y-2">
-                                <Label>Monthly Other Debts ($)</Label>
-                                <Input type="number" value={debt} onChange={(e) => setDebt(Number(e.target.value))} />
-                            </div>
-                        </CardContent>
-                    </Card>
+                    <p className="text-lg text-muted-foreground max-w-3xl">
+                        Get a professional-grade breakdown of your monthly payments and see if your dream home fits your 2026 budget goals.
+                    </p>
                 </div>
 
-                {/* Right Column: Dynamic Results */}
-                <div className="lg:col-span-7 space-y-6">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        <Card className="md:col-span-2 bg-indigo-600 text-white shadow-xl">
-                            <CardHeader className="pb-2">
-                                <CardTitle className="text-sm font-medium opacity-80 uppercase tracking-wider">Estimated Monthly Payment</CardTitle>
-                            </CardHeader>
-                            <CardContent>
-                                <div className="text-5xl font-bold">${Math.round(results.monthlyTotal).toLocaleString()}</div>
-                                <p className="mt-4 text-xs opacity-70 leading-relaxed font-medium">
-                                    Includes Principal, Interest, Property Tax (${Math.round(tax / 12)}), and Home Insurance (${Math.round(insurance / 12)}).
-                                </p>
-                            </CardContent>
-                        </Card>
-
-                        <Card className={`${results.affordabilityStatus === 'safe' ? 'bg-emerald-600 text-white' :
-                            results.affordabilityStatus === 'stretch' ? 'bg-amber-500 text-white' : 'bg-rose-600 text-white'
-                            }`}>
-                            <CardHeader className="pb-2">
-                                <CardTitle className="text-sm font-medium opacity-80 uppercase tracking-wider">DTI Ratio</CardTitle>
-                            </CardHeader>
-                            <CardContent className="space-y-2 text-center">
-                                <div className="text-3xl font-bold">{Math.round(results.dtiRatio)}%</div>
-                                <p className="text-[10px] font-bold uppercase tracking-tighter opacity-80">
-                                    {results.affordabilityStatus === 'safe' ? 'Safe Budget' :
-                                        results.affordabilityStatus === 'stretch' ? 'Tight Budget' : 'High Risk'}
-                                </p>
-                                {results.affordabilityStatus === 'safe' ? <ShieldCheck className="mx-auto h-8 w-8 mt-2 opacity-50" /> : <ShieldAlert className="mx-auto h-8 w-8 mt-2 opacity-50" />}
-                            </CardContent>
-                        </Card>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                    {/* Left Column: Inputs */}
+                    <div className="lg:col-span-5 space-y-6">
                         <Card>
                             <CardHeader>
-                                <CardTitle className="text-base">Payment Breakdown</CardTitle>
+                                <CardTitle>Loan Details</CardTitle>
                             </CardHeader>
-                            <CardContent className="h-[200px] flex items-center justify-center">
-                                <Doughnut data={chartData} options={{ maintainAspectRatio: false }} />
+                            <CardContent className="space-y-6">
+                                <div className="space-y-4">
+                                    <div className="flex justify-between font-medium">
+                                        <Label>Home Price</Label>
+                                        <span className="text-primary">${homePrice.toLocaleString()}</span>
+                                    </div>
+                                    <Slider value={[homePrice]} min={50000} max={2000000} step={5000} onValueChange={(v) => setHomePrice(v[0])} />
+                                </div>
+
+                                <div className="space-y-4 font-medium">
+                                    <div className="flex justify-between">
+                                        <Label>Down Payment</Label>
+                                        <span className="text-primary">${downPayment.toLocaleString()} ({Math.round((downPayment / homePrice) * 100)}%)</span>
+                                    </div>
+                                    <Slider value={[downPayment]} min={0} max={homePrice} step={1000} onValueChange={(v) => setDownPayment(v[0])} />
+                                </div>
+
+                                <div className="grid grid-cols-2 gap-4">
+                                    <div className="space-y-2">
+                                        <Label>Interest Rate (%)</Label>
+                                        <Input type="number" value={rate} onChange={(e) => setRate(Number(e.target.value))} step="0.1" />
+                                    </div>
+                                    <div className="space-y-2">
+                                        <Label>Loan Term (Years)</Label>
+                                        <Input type="number" value={term} onChange={(e) => setTerm(Number(e.target.value))} />
+                                    </div>
+                                </div>
                             </CardContent>
                         </Card>
 
                         <Card>
                             <CardHeader>
-                                <CardTitle className="text-base">Loan Summary</CardTitle>
+                                <CardTitle>Financial Profile</CardTitle>
                             </CardHeader>
-                            <CardContent className="space-y-4">
-                                <div className="flex justify-between text-sm py-2 border-b">
-                                    <span className="text-muted-foreground">Loan Amount</span>
-                                    <span className="font-bold">${results.loanAmount.toLocaleString()}</span>
+                            <CardContent className="space-y-6">
+                                <div className="space-y-2">
+                                    <Label>Annual Household Income ($)</Label>
+                                    <Input type="number" value={income} onChange={(e) => setIncome(Number(e.target.value))} />
                                 </div>
-                                <div className="flex justify-between text-sm py-2 border-b">
-                                    <span className="text-muted-foreground">Total Interest Paid</span>
-                                    <span className="font-bold text-amber-600">${results.totalInterest.toLocaleString()}</span>
-                                </div>
-                                <div className="flex justify-between text-sm py-2">
-                                    <span className="text-muted-foreground">Total Cost of Loan</span>
-                                    <span className="font-bold">${results.totalCost.toLocaleString()}</span>
+                                <div className="space-y-2">
+                                    <Label>Monthly Other Debts ($)</Label>
+                                    <Input type="number" value={debt} onChange={(e) => setDebt(Number(e.target.value))} />
                                 </div>
                             </CardContent>
                         </Card>
                     </div>
 
-                    <div className="flex gap-4">
-                        <Button size="lg" className="flex-1 rounded-full gap-2">
-                            <Share2 className="h-5 w-5" />
-                            Share Report
-                        </Button>
-                        <Button size="lg" variant="outline" className="flex-1 rounded-full">
-                            Full Amortization Table
-                        </Button>
+                    {/* Right Column: Dynamic Results */}
+                    <div className="lg:col-span-7 space-y-6">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <Card className="md:col-span-2 bg-indigo-600 text-white shadow-xl">
+                                <CardHeader className="pb-2">
+                                    <CardTitle className="text-sm font-medium opacity-80 uppercase tracking-wider">Estimated Monthly Payment</CardTitle>
+                                </CardHeader>
+                                <CardContent>
+                                    <div className="text-5xl font-bold">${Math.round(results.monthlyTotal).toLocaleString()}</div>
+                                    <p className="mt-4 text-xs opacity-70 leading-relaxed font-medium">
+                                        Includes Principal, Interest, Property Tax (${Math.round(tax / 12)}), and Home Insurance (${Math.round(insurance / 12)}).
+                                    </p>
+                                </CardContent>
+                            </Card>
+
+                            <Card className={`${results.affordabilityStatus === 'safe' ? 'bg-emerald-600 text-white' :
+                                results.affordabilityStatus === 'stretch' ? 'bg-amber-500 text-white' : 'bg-rose-600 text-white'
+                                }`}>
+                                <CardHeader className="pb-2">
+                                    <CardTitle className="text-sm font-medium opacity-80 uppercase tracking-wider">DTI Ratio</CardTitle>
+                                </CardHeader>
+                                <CardContent className="space-y-2 text-center">
+                                    <div className="text-3xl font-bold">{Math.round(results.dtiRatio)}%</div>
+                                    <p className="text-[10px] font-bold uppercase tracking-tighter opacity-80">
+                                        {results.affordabilityStatus === 'safe' ? 'Safe Budget' :
+                                            results.affordabilityStatus === 'stretch' ? 'Tight Budget' : 'High Risk'}
+                                    </p>
+                                    {results.affordabilityStatus === 'safe' ? <ShieldCheck className="mx-auto h-8 w-8 mt-2 opacity-50" /> : <ShieldAlert className="mx-auto h-8 w-8 mt-2 opacity-50" />}
+                                </CardContent>
+                            </Card>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <Card>
+                                <CardHeader>
+                                    <CardTitle className="text-base">Payment Breakdown</CardTitle>
+                                </CardHeader>
+                                <CardContent className="h-[200px] flex items-center justify-center">
+                                    <Doughnut data={chartData} options={{ maintainAspectRatio: false }} />
+                                </CardContent>
+                            </Card>
+
+                            <Card>
+                                <CardHeader>
+                                    <CardTitle className="text-base">Loan Summary</CardTitle>
+                                </CardHeader>
+                                <CardContent className="space-y-4">
+                                    <div className="flex justify-between text-sm py-2 border-b">
+                                        <span className="text-muted-foreground">Loan Amount</span>
+                                        <span className="font-bold">${results.loanAmount.toLocaleString()}</span>
+                                    </div>
+                                    <div className="flex justify-between text-sm py-2 border-b">
+                                        <span className="text-muted-foreground">Total Interest Paid</span>
+                                        <span className="font-bold text-amber-600">${results.totalInterest.toLocaleString()}</span>
+                                    </div>
+                                    <div className="flex justify-between text-sm py-2">
+                                        <span className="text-muted-foreground">Total Cost of Loan</span>
+                                        <span className="font-bold">${results.totalCost.toLocaleString()}</span>
+                                    </div>
+                                </CardContent>
+                            </Card>
+                        </div>
+
+                        {/* Rectangle Ad before share buttons */}
+                        <AdPlaceholder type="rectangle" className="my-6" />
+
+                        <div className="flex gap-4">
+                            <Button size="lg" className="flex-1 rounded-full gap-2">
+                                <Share2 className="h-5 w-5" />
+                                Share Report
+                            </Button>
+                            <Button size="lg" variant="outline" className="flex-1 rounded-full">
+                                Full Amortization Table
+                            </Button>
+                        </div>
                     </div>
-                    <AdPlaceholder type="content" className="mt-8" />
                 </div>
             </div>
-        </div>
+        </CalculatorLayoutWrapper>
     );
 }
