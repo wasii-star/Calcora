@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-    title: "Free BMI & Daily Calorie Calculator 2026 | Health Tracker | Calcora",
+    title: "Free BMI & Daily Calorie Calculator 2026 | Calcora",
     description: "Calculate your BMI and daily calorie needs (TDEE). Get accurate targets for weight maintenance or loss with Calcora's 2026 health tools.",
     keywords: ["bmi calculator", "calorie needs calculator", "tdee calculator", "health tracker", "Calcora bmi"],
 };

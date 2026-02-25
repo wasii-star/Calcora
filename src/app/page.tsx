@@ -99,7 +99,7 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-4">
             <Button size="lg" className="h-16 px-10 text-lg rounded-full shadow-2xl shadow-emerald-500/30 bg-emerald-500 hover:bg-emerald-600 text-white border-0 transition-all hover:scale-105" asChild>
-              <Link href="/ev-savings">Try EV Savings →</Link>
+              <Link href="/ev-savings">Try EV Savings Now →</Link>
             </Button>
             <Button size="lg" variant="outline" className="h-16 px-10 text-lg rounded-full border-white/20 hover:bg-white/10 text-white backdrop-blur transition-all" asChild>
               <Link href="#calculators">Explore All Tools</Link>

@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-    title: "Free EV vs Gas Savings Calculator 2026 | Compare Charging vs Fuel Costs | Calcora",
+    title: "Free EV vs Gas Savings Calculator 2026 | Calcora",
     description: "Calculate exactly how much you can save by switching from gas to an electric vehicle. Compare 5-year savings, charging costs, and MPG with Calcora's smart EV calculator.",
     keywords: ["EV savings calculator", "gas vs electric cost", "electric car savings", "EV fuel cost calculator", "Calcora"],
     openGraph: {

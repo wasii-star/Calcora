@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-    title: "Free FIRE & Early Retirement Calculator 2026 | Financial Independence Tracker | Calcora",
+    title: "Free FIRE & Early Retirement Calculator 2026 | Calcora",
     description: "Calculate your path to financial independence and early retirement (FIRE). Track savings and investment returns with Calcora.",
     keywords: ["retirement calculator", "FIRE calculator", "financial independence", "retirement savings tracker", "Calcora FIRE"],
 };

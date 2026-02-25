@@ -68,13 +68,13 @@ export default function RootLayout({
                 </span>
               </Link>
               <div className="flex items-center gap-4">
-                <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
-                  <Link href="/#calculators" className="text-muted-foreground transition-colors hover:text-primary">
-                    Calculators
-                  </Link>
-                  <Link href="/about" className="text-muted-foreground transition-colors hover:text-primary">
-                    About
-                  </Link>
+                <nav className="hidden lg:flex items-center gap-6 text-sm font-medium">
+                  <Link href="/" className="text-muted-foreground transition-colors hover:text-primary font-semibold">Home</Link>
+                  <Link href="/ev-savings" className="text-muted-foreground transition-colors hover:text-primary">EV Savings</Link>
+                  <Link href="/mortgage-calculator" className="text-muted-foreground transition-colors hover:text-primary">Mortgage</Link>
+                  <Link href="/solar-roi" className="text-muted-foreground transition-colors hover:text-primary">Solar ROI</Link>
+                  <Link href="/fire-retirement" className="text-muted-foreground transition-colors hover:text-primary">Retirement</Link>
+                  <Link href="/about" className="text-muted-foreground transition-colors hover:text-primary">About</Link>
                 </nav>
                 <div className="h-4 w-px bg-border hidden md:block" />
                 <ModeToggle />
