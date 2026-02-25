@@ -10,6 +10,7 @@ import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { calculateSolar, SolarResult } from "@/lib/calculations";
 import { AdPlaceholder } from "@/components/ad-placeholder";
+import { ShareButton } from "@/components/share-button";
 import { CalculatorLayoutWrapper } from "@/components/calculator-layout-wrapper";
 import {
     Chart as ChartJS,
@@ -65,7 +66,7 @@ export default function SolarROIPage() {
                         <div className="p-2 h-10 w-10 flex items-center justify-center rounded-lg bg-orange-500/10 text-orange-600">
                             <Sun className="h-6 w-6" />
                         </div>
-                        <h1 className="text-4xl font-bold tracking-tight">Solar Panel ROI & Payback</h1>
+                        <h1 className="text-4xl font-bold tracking-tight">Free Solar ROI & Energy Savings Calculator 2026</h1>
                     </div>
                     <p className="text-lg text-muted-foreground">Estimate your solar payback period and long-term utility savings in seconds.</p>
                 </div>
@@ -115,7 +116,17 @@ export default function SolarROIPage() {
                                 <Line data={chartData} options={{ maintainAspectRatio: false, scales: { y: { ticks: { callback: (v) => '$' + v } } } }} />
                             </CardContent>
                         </Card>
-                        <AdPlaceholder type="rectangle" className="mt-6" />
+                        <AdPlaceholder type="rectangle" className="mt-8" />
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+                            <ShareButton
+                                title="My Solar ROI on Calcora"
+                                text={`☀️ My solar payback is only ${results.paybackYears} years! Calcora shows I'll save $${Math.round(results.life20Savings).toLocaleString()} in 20 years. Check yours:`}
+                            />
+                            <Button size="lg" variant="outline" className="rounded-full h-14 font-bold">
+                                Get Installation Tips
+                            </Button>
+                        </div>
                     </div>
                 </div>
             </div>

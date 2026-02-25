@@ -21,6 +21,7 @@ import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { calculateMortgage, MortgageResult } from "@/lib/calculations";
 import { AdPlaceholder } from "@/components/ad-placeholder";
+import { ShareButton } from "@/components/share-button";
 import { CalculatorLayoutWrapper } from "@/components/calculator-layout-wrapper";
 import {
     Chart as ChartJS,
@@ -92,7 +93,7 @@ export default function MortgagePage() {
                         <div className="p-2 h-10 w-10 flex items-center justify-center rounded-lg bg-indigo-500/10 text-indigo-600">
                             <Home className="h-6 w-6" />
                         </div>
-                        <h1 className="text-4xl font-bold tracking-tight">Mortgage Affordability Calculator</h1>
+                        <h1 className="text-4xl font-bold tracking-tight">Free Mortgage Affordability & Payment Calculator 2026</h1>
                     </div>
                     <p className="text-lg text-muted-foreground max-w-3xl">
                         Get a professional-grade breakdown of your monthly payments and see if your dream home fits your 2026 budget goals.
@@ -220,12 +221,13 @@ export default function MortgagePage() {
                         <AdPlaceholder type="rectangle" className="my-6" />
 
                         <div className="flex gap-4">
-                            <Button size="lg" className="flex-1 rounded-full gap-2">
-                                <Share2 className="h-5 w-5" />
-                                Share Report
-                            </Button>
-                            <Button size="lg" variant="outline" className="flex-1 rounded-full">
-                                Full Amortization Table
+                            <ShareButton
+                                className="flex-1"
+                                title="My Mortgage Affordability on Calcora"
+                                text={`🏠 I found my dream home budget on Calcora! My estimated monthly payment is $${Math.round(results.monthlyTotal).toLocaleString()}. Check yours:`}
+                            />
+                            <Button size="lg" variant="outline" className="flex-1 rounded-full h-14 font-bold">
+                                Download Amortization
                             </Button>
                         </div>
                     </div>

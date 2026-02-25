@@ -3,16 +3,17 @@ import { Metadata } from "next";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-    title: "Auto Loan Calculator | Monthly Payment & Interest 2026 | Calcora",
-    description: "Plan your next car purchase with our free auto loan calculator. Estimate monthly payments, total interest, and financing costs including sales tax.",
+    title: "Free Auto Loan & Car Payment Calculator 2026 | Calcora",
+    description: "Calculate monthly car payments and total interest for your next vehicle purchase. Accurate auto loan planning for 2026 with Calcora.",
     keywords: ["car loan calculator", "auto finance calculator", "monthly car payment", "vehicle loan interest", "Calcora car loan"],
 };
 
 const jsonLd = {
     "@context": "https://schema.org",
     "@type": "FinancialCalculator",
-    "name": "Auto Loan Calculator",
+    "name": "Auto Loan & Car Payment Calculator",
     "description": "Calculate monthly car payments and total interest for vehicle loans.",
+    "url": "https://calcora-sandy.vercel.app/car-loan",
 };
 
 export default function CarLoanLayout({

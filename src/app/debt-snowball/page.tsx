@@ -9,6 +9,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { calculateDebtPayoff } from "@/lib/calculations";
 import { AdPlaceholder } from "@/components/ad-placeholder";
+import { ShareButton } from "@/components/share-button";
 import { CalculatorLayoutWrapper } from "@/components/calculator-layout-wrapper";
 
 export default function DebtSnowballPage() {
@@ -35,7 +36,7 @@ export default function DebtSnowballPage() {
 
                 <div className="flex items-center gap-3 mb-10 text-rose-600">
                     <BarChart3 className="h-8 w-8" />
-                    <h1 className="text-4xl font-bold tracking-tight">Debt Snowball Payoff</h1>
+                    <h1 className="text-4xl font-bold tracking-tight">Free Debt Snowball & Payoff Calculator 2026</h1>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
@@ -84,6 +85,14 @@ export default function DebtSnowballPage() {
                     ))}
                 </div>
                 <AdPlaceholder type="rectangle" className="mt-12" />
+
+                <div className="flex gap-4 mt-12 justify-center max-w-sm mx-auto">
+                    <ShareButton
+                        className="w-full"
+                        title="My Debt Payoff Timeline on Calcora"
+                        text={`📉 I'll be debt-free in just ${results.months} months using the snowball method! See your payoff timeline on Calcora:`}
+                    />
+                </div>
             </div>
         </CalculatorLayoutWrapper >
     );

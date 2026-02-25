@@ -3,18 +3,18 @@ import { Metadata } from "next";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-    title: "BMI & Daily Calorie Needs Calculator | Health Tracker | Calcora",
-    description: "Calculate your Body Mass Index (BMI) and Total Daily Energy Expenditure (TDEE). Get accurate calorie targets for weight maintenance or loss based on your profile.",
+    title: "Free BMI & Daily Calorie Calculator 2026 | Health Tracker | Calcora",
+    description: "Calculate your BMI and daily calorie needs (TDEE). Get accurate targets for weight maintenance or loss with Calcora's 2026 health tools.",
     keywords: ["bmi calculator", "calorie needs calculator", "tdee calculator", "health tracker", "Calcora bmi"],
 };
 
 const jsonLd = {
     "@context": "https://schema.org",
-    "@id": "https://calcora.com/bmi",
     "@type": "SoftwareApplication",
-    "name": "BMI & Calorie Calculator",
+    "name": "BMI & Daily Calorie Calculator",
     "applicationCategory": "HealthApplication",
     "description": "Calculate Body Mass Index and daily calorie requirements.",
+    "url": "https://calcora-sandy.vercel.app/bmi-calories",
 };
 
 export default function BMILayout({

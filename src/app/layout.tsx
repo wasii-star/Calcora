@@ -102,9 +102,9 @@ export default function RootLayout({
                   <h4 className="text-sm font-bold uppercase tracking-wider text-foreground">Tools</h4>
                   <ul className="space-y-2 text-sm text-muted-foreground">
                     <li><Link href="/ev-savings" className="hover:text-primary transition-colors">EV Savings</Link></li>
-                    <li><Link href="/mortgage-affordability" className="hover:text-primary transition-colors">Mortgage</Link></li>
+                    <li><Link href="/mortgage-calculator" className="hover:text-primary transition-colors">Mortgage</Link></li>
                     <li><Link href="/solar-roi" className="hover:text-primary transition-colors">Solar ROI</Link></li>
-                    <li><Link href="/fire" className="hover:text-primary transition-colors">Retirement</Link></li>
+                    <li><Link href="/fire-retirement" className="hover:text-primary transition-colors">Retirement</Link></li>
                   </ul>
                 </div>
                 <div className="space-y-4">

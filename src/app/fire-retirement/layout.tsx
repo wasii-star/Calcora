@@ -2,16 +2,17 @@ import { Metadata } from "next";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-    title: "FIRE & Retirement Calculator | Financial Independence Tracker | Calcora",
-    description: "Calculate your path to early retirement. Track your savings, expected returns, and find out when you'll reach financial independence (FIRE) with our smart calculator.",
+    title: "Free FIRE & Early Retirement Calculator 2026 | Financial Independence Tracker | Calcora",
+    description: "Calculate your path to financial independence and early retirement (FIRE). Track savings and investment returns with Calcora.",
     keywords: ["retirement calculator", "FIRE calculator", "financial independence", "retirement savings tracker", "Calcora FIRE"],
 };
 
 const jsonLd = {
     "@context": "https://schema.org",
     "@type": "FinancialCalculator",
-    "name": "FIRE / Retirement Calculator",
+    "name": "FIRE & Early Retirement Calculator",
     "description": "Calculate age and savings required to reach financial independence (FIRE).",
+    "url": "https://calcora-sandy.vercel.app/fire-retirement",
 };
 
 export default function FIRELayout({

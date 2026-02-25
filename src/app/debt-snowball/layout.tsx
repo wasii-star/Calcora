@@ -3,16 +3,17 @@ import { Metadata } from "next";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-    title: "Debt Snowball Calculator | Get Out of Debt Faster | Calcora",
-    description: "Visualize your path to being debt-free. Use the snowball method to pay off credit cards and loans faster. See how extra payments cut years off your timeline.",
+    title: "Free Debt Snowball & Payoff Calculator 2026 | Calcora",
+    description: "Visualize your path to being debt-free using the snowball method. Calculate payoff timelines for credit cards and loans with Calcora.",
     keywords: ["debt snowball calculator", "debt payoff calculator", "get out of debt free", "credit card payoff", "Calcora debt"],
 };
 
 const jsonLd = {
     "@context": "https://schema.org",
     "@type": "FinancialCalculator",
-    "name": "Debt Snowball Calculator",
+    "name": "Debt Snowball & Payoff Calculator",
     "description": "Calculate debt payoff timelines using the snowball method.",
+    "url": "https://calcora-sandy.vercel.app/debt-snowball",
 };
 
 export default function DebtLayout({

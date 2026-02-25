@@ -2,17 +2,18 @@ import { Metadata } from "next";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-    title: "Tip Calculator & Bill Splitter | Quick Percentage Tool | Calcora",
-    description: "Quickly calculate tips and split bills between any number of people. Fast, beautiful, and perfect for dining out or group expenses.",
+    title: "Free Tip Calculator & Bill Splitter 2026 | Quick Percentage Tool | Calcora",
+    description: "Calculate tips and split bills instantly between any number of people. Fast, smart, and free for group dining with Calcora.",
     keywords: ["tip calculator", "bill splitter", "percentage calculator", "dining tip tool", "Calcora tip"],
 };
 
 const jsonLd = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Tip & Bill Splitter",
+    "name": "Tip Calculator & Bill Splitter",
     "applicationCategory": "UtilitiesApplication",
     "description": "Quickly calculate tips and split dinner bills between friends.",
+    "url": "https://calcora-sandy.vercel.app/tip-calculator",
 };
 
 export default function TipLayout({

@@ -15,6 +15,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { AdPlaceholder } from "@/components/ad-placeholder";
+import { InstallPrompt } from "@/components/install-prompt";
 
 const calculators = [
   {
@@ -28,7 +29,7 @@ const calculators = [
     title: "Mortgage",
     description: "Calculate affordability and monthly payments with interest.",
     icon: HomeIcon,
-    href: "/mortgage-affordability",
+    href: "/mortgage-calculator",
     color: "bg-indigo-500/10 text-indigo-600 dark:text-indigo-400",
   },
   {
@@ -49,7 +50,7 @@ const calculators = [
     title: "FIRE / Retirement",
     description: "Track your path to financial independence and retirement.",
     icon: TrendingUp,
-    href: "/fire",
+    href: "/fire-retirement",
     color: "bg-violet-500/10 text-violet-600 dark:text-violet-400",
   },
   {
@@ -63,14 +64,14 @@ const calculators = [
     title: "BMI & Calories",
     description: "Calculate BMI and daily calorie needs for a healthy life.",
     icon: Activity,
-    href: "/bmi",
+    href: "/bmi-calories",
     color: "bg-pink-500/10 text-pink-600 dark:text-pink-400",
   },
   {
     title: "Tip & Percent",
     description: "Quickly calculate tips and percentages for everyday use.",
     icon: Calculator,
-    href: "/tip",
+    href: "/tip-calculator",
     color: "bg-amber-500/10 text-amber-600 dark:text-amber-400",
   },
 ];
@@ -79,33 +80,35 @@ export default function Home() {
   return (
     <div className="flex flex-col gap-20 pb-20">
       {/* Hero Section */}
-      <section className="relative pt-20 pb-32 overflow-hidden">
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(45%_40%_at_50%_50%,rgba(79,70,229,0.1)_0%,transparent_100%)] px-4" />
-        <div className="container mx-auto px-4 sm:px-8 text-center space-y-8">
-          <div className="inline-flex items-center gap-2 rounded-full border bg-background/50 px-4 py-1.5 text-xs font-medium backdrop-blur">
+      <section className="relative pt-24 pb-36 overflow-hidden bg-gradient-to-br from-[#0A2540] to-[#1E3A8A] text-white">
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(45%_40%_at_50%_50%,rgba(79,70,229,0.15)_0%,transparent_100%)] opacity-30" />
+        <div className="container mx-auto px-4 sm:px-8 text-center space-y-10 relative z-10">
+          <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-medium backdrop-blur shadow-inner">
             <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
             </span>
-            New: EV Savings Calculator 2026 Updated
+            <span className="text-emerald-100">Live for 2026: Professional Accuracy Guaranteed</span>
           </div>
-          <h1 className="text-4xl font-extrabold tracking-tight sm:text-6xl md:text-7xl lg:text-8xl bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/70 leading-[1.1]">
-            Make smarter money & <br className="hidden md:block" /> life decisions in seconds
+          <h1 className="text-5xl font-extrabold tracking-tight sm:text-7xl md:text-8xl lg:text-9xl bg-clip-text text-transparent bg-gradient-to-b from-white to-white/60 leading-[1.05]">
+            Free 2026 Calculators <br className="hidden md:block" /> That Save You Real Money
           </h1>
-          <p className="max-w-2xl mx-auto text-lg sm:text-xl text-muted-foreground leading-relaxed">
-            Beautiful, fast, and 100% free professional-grade calculators.
-            No sign-ups, no tracking—just accurate data to help you move forward.
+          <p className="max-w-3xl mx-auto text-xl sm:text-2xl text-indigo-100/80 leading-relaxed font-light">
+            Modern, fast, and 100% free professional-grade tools.
+            Scale your financial future with zero tracking and total privacy.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button size="lg" className="h-12 px-8 text-base rounded-full shadow-xl shadow-primary/20" asChild>
-              <Link href="#calculators">Explore Calculators</Link>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-4">
+            <Button size="lg" className="h-16 px-10 text-lg rounded-full shadow-2xl shadow-emerald-500/30 bg-emerald-500 hover:bg-emerald-600 text-white border-0 transition-all hover:scale-105" asChild>
+              <Link href="/ev-savings">Try EV Savings →</Link>
             </Button>
-            <Button size="lg" variant="outline" className="h-12 px-8 text-base rounded-full" asChild>
-              <Link href="/ev-savings">Check EV Savings</Link>
+            <Button size="lg" variant="outline" className="h-16 px-10 text-lg rounded-full border-white/20 hover:bg-white/10 text-white backdrop-blur transition-all" asChild>
+              <Link href="#calculators">Explore All Tools</Link>
             </Button>
           </div>
         </div>
       </section>
+
+      <InstallPrompt />
 
       {/* Leaderboard Ad after Hero */}
       <section className="container mx-auto px-4 sm:px-8 -mt-10">
@@ -124,25 +127,25 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {calculators.map((calc) => (
             <Link key={calc.title} href={calc.href} className="group">
-              <Card className="h-full border-2 transition-all hover:border-primary hover:shadow-xl hover:-translate-y-1">
-                <CardHeader className="space-y-4">
-                  <div className={`p-3 w-fit rounded-xl ${calc.color} transition-transform group-hover:scale-110`}>
-                    <calc.icon className="h-6 w-6" />
+              <Card className="h-full border-2 transition-all duration-300 hover:border-primary hover:shadow-[0_20px_50px_rgba(79,70,229,0.15)] hover:scale-105 rounded-[2rem] overflow-hidden">
+                <CardHeader className="space-y-6 p-8">
+                  <div className={`p-4 w-fit rounded-2xl ${calc.color} transition-all duration-500 group-hover:rotate-6 group-hover:scale-110 shadow-sm`}>
+                    <calc.icon className="h-8 w-8" />
                   </div>
-                  <div className="space-y-1">
-                    <CardTitle className="text-xl font-bold">{calc.title}</CardTitle>
-                    <CardDescription className="line-clamp-2">
+                  <div className="space-y-2">
+                    <CardTitle className="text-2xl font-bold tracking-tight">{calc.title}</CardTitle>
+                    <CardDescription className="line-clamp-2 text-base leading-relaxed">
                       {calc.description}
                     </CardDescription>
                   </div>
                 </CardHeader>
-                <CardContent>
-                  <div className="flex items-center text-sm font-semibold text-primary">
+                <CardContent className="px-8 pb-8">
+                  <div className="flex items-center text-sm font-bold text-primary uppercase tracking-widest">
                     Launch Tool
-                    <Zap className="ml-1 h-3 w-3 transition-transform group-hover:translate-x-1" />
+                    <Zap className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-2" />
                   </div>
                 </CardContent>
               </Card>

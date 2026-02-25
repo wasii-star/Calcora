@@ -115,7 +115,7 @@ export default function EVSavingsPage() {
                         <div className="p-2 h-10 w-10 flex items-center justify-center rounded-lg bg-primary/10 text-primary">
                             <Car className="h-6 w-6" />
                         </div>
-                        <h1 className="text-4xl font-bold tracking-tight">EV vs Gas Savings Calculator</h1>
+                        <h1 className="text-4xl font-bold tracking-tight">Free EV vs Gas Savings Calculator 2026</h1>
                     </div>
                     <p className="text-lg text-muted-foreground max-w-3xl">
                         See your 5-year and lifetime savings by switching to electric. Our 2026 data model accounts for real-world efficiency and fuel prices.
@@ -266,7 +266,7 @@ export default function EVSavingsPage() {
                             <ShareButton
                                 className="flex-1"
                                 title="My EV Savings on Calcora"
-                                text={`I just calculated my savings with Calcora! I'll save $${Math.round(results.totalSavings).toLocaleString()} over ${years} years by switching to an EV.`}
+                                text={`🚀 I'll save $${Math.round(results.totalSavings).toLocaleString()} in ${years} years by switching to an EV! Calculate yours on Calcora:`}
                             />
                             <Button variant="outline" className="flex-1 rounded-full h-12 text-base font-semibold">
                                 Download PDF Report

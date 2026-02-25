@@ -9,6 +9,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { calculateTip } from "@/lib/calculations";
 import { AdPlaceholder } from "@/components/ad-placeholder";
+import { ShareButton } from "@/components/share-button";
 import { CalculatorLayoutWrapper } from "@/components/calculator-layout-wrapper";
 
 export default function TipPage() {
@@ -31,7 +32,7 @@ export default function TipPage() {
 
                 <div className="flex items-center gap-3 mb-10 text-amber-600">
                     <Calculator className="h-8 w-8" />
-                    <h1 className="text-4xl font-bold tracking-tight">Tip & Bill Splitter</h1>
+                    <h1 className="text-4xl font-bold tracking-tight">Free Tip Calculator & Bill Splitter 2026</h1>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -81,11 +82,11 @@ export default function TipPage() {
 
                 <AdPlaceholder type="rectangle" className="mt-12" />
 
-                {/* Sharing mockup footer */}
-                <div className="mt-20 text-center space-y-4">
-                    <Button variant="ghost" className="rounded-full gap-2 text-muted-foreground">
-                        <Share2 className="h-4 w-4" /> Share with group
-                    </Button>
+                <div className="mt-12 flex justify-center">
+                    <ShareButton
+                        title="Split the bill with Calcora"
+                        text={`💸 Total per person: $${results.perPerson.toFixed(2)}. Calculated instantly with Calcora:`}
+                    />
                 </div>
             </div>
         </CalculatorLayoutWrapper>

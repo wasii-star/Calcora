@@ -10,6 +10,7 @@ import { Label } from "@/components/ui/label";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { calculateBMI } from "@/lib/calculations";
 import { AdPlaceholder } from "@/components/ad-placeholder";
+import { ShareButton } from "@/components/share-button";
 import { CalculatorLayoutWrapper } from "@/components/calculator-layout-wrapper";
 
 export default function BMIPage() {
@@ -34,7 +35,7 @@ export default function BMIPage() {
 
                 <div className="flex items-center gap-3 mb-10 text-pink-600">
                     <Activity className="h-8 w-8" />
-                    <h1 className="text-4xl font-bold tracking-tight">BMI & Daily Calorie Needs</h1>
+                    <h1 className="text-4xl font-bold tracking-tight">Free BMI & Daily Calorie Calculator 2026</h1>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -89,7 +90,15 @@ export default function BMIPage() {
                                 <p className="mt-4 text-xs text-muted-foreground leading-relaxed">This is the average number of calories you burn per day. Eat this amount to maintain your current weight.</p>
                             </CardContent>
                         </Card>
-                        <AdPlaceholder type="rectangle" className="mt-6" />
+                        <AdPlaceholder type="rectangle" className="mt-8" />
+
+                        <div className="flex gap-4 mt-8">
+                            <ShareButton
+                                className="flex-1"
+                                title="My Health Profile on Calcora"
+                                text={`💪 My BMI is ${results.bmi} and my daily calorie target is ${results.tdee.toLocaleString()}! Calculate yours on Calcora:`}
+                            />
+                        </div>
                     </div>
                 </div>
             </div>

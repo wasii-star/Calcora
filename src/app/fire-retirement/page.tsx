@@ -10,6 +10,7 @@ import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { calculateRetirement } from "@/lib/calculations";
 import { AdPlaceholder } from "@/components/ad-placeholder";
+import { ShareButton } from "@/components/share-button";
 import { CalculatorLayoutWrapper } from "@/components/calculator-layout-wrapper";
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, Filler } from 'chart.js';
 import { Line } from 'react-chartjs-2';
@@ -51,7 +52,7 @@ export default function RetirementPage() {
 
                 <div className="flex items-center gap-3 mb-10">
                     <div className="p-2 rounded-lg bg-violet-500/10 text-violet-600"><TrendingUp className="h-6 w-6" /></div>
-                    <h1 className="text-4xl font-bold tracking-tight text-foreground">Retirement & FIRE Forecast</h1>
+                    <h1 className="text-4xl font-bold tracking-tight text-foreground">Free FIRE & Early Retirement Calculator 2026</h1>
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
@@ -89,7 +90,18 @@ export default function RetirementPage() {
                             <CardHeader><CardTitle>Wealth Projection</CardTitle></CardHeader>
                             <CardContent className="h-[300px]"><Line data={chartData} options={{ maintainAspectRatio: false }} /></CardContent>
                         </Card>
-                        <AdPlaceholder type="rectangle" className="mt-6" />
+                        <AdPlaceholder type="rectangle" className="mt-8" />
+
+                        <div className="flex gap-4 mt-8">
+                            <ShareButton
+                                className="flex-1"
+                                title="My FIRE Goal on Calcora"
+                                text={`🔥 I'm on track to retire with $${Math.round(results.finalBalance).toLocaleString()}! Calcora shows I've hit ${Math.round((results.finalBalance / results.targetFIRE) * 100)}% of my FIRE goal. Check yours:`}
+                            />
+                            <Button size="lg" variant="outline" className="flex-1 rounded-full h-14 font-bold">
+                                Plan Contributions
+                            </Button>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -42,11 +42,10 @@ export function ShareButton({ title, text, url, className = "" }: ShareButtonPro
     return (
         <Button
             onClick={handleShare}
-            className={`rounded-full gap-2 shadow-lg ${className}`}
-            size="lg"
+            className={`rounded-full gap-3 shadow-2xl shadow-primary/20 bg-primary hover:bg-primary/90 text-primary-foreground transition-all hover:scale-105 h-14 px-8 text-lg font-bold ${className}`}
         >
-            {copied ? <Check className="h-5 w-5" /> : <Share2 className="h-5 w-5" />}
-            {copied ? "Result Copied!" : "Share Result"}
+            {copied ? <Check className="h-6 w-6 animate-in zoom-in" /> : <Share2 className="h-6 w-6" />}
+            {copied ? "Savings Copied!" : "Share My Savings"}
         </Button>
     );
 }

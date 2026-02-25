@@ -10,6 +10,7 @@ import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { calculateCarLoan, CarLoanResult } from "@/lib/calculations";
 import { AdPlaceholder } from "@/components/ad-placeholder";
+import { ShareButton } from "@/components/share-button";
 import { CalculatorLayoutWrapper } from "@/components/calculator-layout-wrapper";
 
 export default function CarLoanPage() {
@@ -35,7 +36,7 @@ export default function CarLoanPage() {
 
                 <div className="flex items-center gap-3 mb-10">
                     <div className="p-2 rounded-lg bg-emerald-500/10 text-emerald-600"><Wallet className="h-6 w-6" /></div>
-                    <h1 className="text-4xl font-bold tracking-tight">Car Loan Calculator</h1>
+                    <h1 className="text-4xl font-bold tracking-tight">Free Auto Loan & Car Payment Calculator 2026</h1>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -72,7 +73,18 @@ export default function CarLoanPage() {
                                 <div className="flex justify-between py-2"><span>Total Payment</span><span className="font-bold">${Math.round(results.totalCost).toLocaleString()}</span></div>
                             </CardContent>
                         </Card>
-                        <AdPlaceholder type="rectangle" className="mt-6" />
+                        <AdPlaceholder type="rectangle" className="mt-8" />
+
+                        <div className="flex gap-4 mt-8">
+                            <ShareButton
+                                className="flex-1"
+                                title="My Car Loan Payment on Calcora"
+                                text={`🏎️ Just used Calcora to plan my car loan! My estimated monthly payment is $${Math.round(results.monthlyPayment).toLocaleString()}. Check it out:`}
+                            />
+                            <Button size="lg" variant="outline" className="flex-1 rounded-full h-14 font-bold">
+                                View Full Table
+                            </Button>
+                        </div>
                     </div>
                 </div>
             </div>

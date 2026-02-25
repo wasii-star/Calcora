@@ -3,16 +3,17 @@ import { Metadata } from "next";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-    title: "Mortgage Affordability & Payment Calculator 2026 | Calcora",
-    description: "Find out exactly how much home you can afford. Calculate monthly payments, interest, and debt-to-income ratios with our free mortgage calculator updated for 2026 rates.",
+    title: "Free Mortgage Affordability & Payment Calculator 2026 | Calcora",
+    description: "Calculate home affordability and monthly mortgage payments. See how interest rates affect your budget with Calcora's free 2026 mortgage tool.",
     keywords: ["mortgage calculator", "home affordability", "monthly mortgage payment", "DTI ratio calculator", "Calcora mortgage"],
 };
 
 const jsonLd = {
     "@context": "https://schema.org",
     "@type": "FinancialCalculator",
-    "name": "Mortgage Affordability Calculator",
+    "name": "Mortgage Affordability & Payment Calculator",
     "description": "Calculate home affordability and monthly mortgage payments based on income, debt, and interest rates.",
+    "url": "https://calcora-sandy.vercel.app/mortgage-calculator",
 };
 
 export default function MortgageLayout({
