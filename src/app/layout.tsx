@@ -40,6 +40,9 @@ export const metadata: Metadata = {
     statusBarStyle: "default",
     title: "SmartSaverCalc",
   },
+  other: {
+    "google-site-verification": "ca-pub-4485720965165895",
+  },
 };
 
 export default function RootLayout({
