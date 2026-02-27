@@ -108,7 +108,6 @@ export default function Home() {
         </div>
       </section>
 
-      <InstallPrompt />
 
       {/* Leaderboard Ad after Hero */}
       <section className="container mx-auto px-4 sm:px-8 -mt-10">
@@ -154,13 +153,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Why Calcora Section */}
+      {/* Why SmartSaverCalc Section */}
       <section className="bg-muted/50 py-24 border-y">
         <div className="container mx-auto px-4 sm:px-8">
           <div className="text-center mb-16 space-y-4">
-            <h2 className="text-3xl font-bold sm:text-4xl lg:text-5xl tracking-tight">Why use Calcora?</h2>
+            <h2 className="text-3xl font-bold sm:text-4xl lg:text-5xl tracking-tight">Why use SmartSaverCalc?</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              We built Calcora to be the most beautiful and accurate toolset on the web.
+              We built SmartSaverCalc to be the most beautiful and accurate toolset on the web.
             </p>
           </div>
 

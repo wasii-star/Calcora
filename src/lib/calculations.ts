@@ -1,5 +1,5 @@
 /**
- * Calculator logic for Calcora - Full Final Production Library
+ * Calculator logic for SmartSaverCalc - Full Final Production Library
  */
 
 // --- Interfaces ---

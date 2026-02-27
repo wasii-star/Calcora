@@ -217,14 +217,16 @@ export default function MortgagePage() {
                             </Card>
                         </div>
 
-                        {/* Rectangle Ad before share buttons */}
-                        <AdPlaceholder type="rectangle" className="my-6" />
+                        <AdPlaceholder type="rectangle" className="my-8" />
 
                         <div className="flex gap-4">
                             <ShareButton
                                 className="flex-1"
-                                title="My Mortgage Affordability on Calcora"
-                                text={`🏠 I found my dream home budget on Calcora! My estimated monthly payment is $${Math.round(results.monthlyTotal).toLocaleString()}. Check yours:`}
+                                title="My Mortgage Affordability on SmartSaverCalc"
+                                results={results}
+                                calculatorName="Mortgage Calculator"
+                                primaryValue={`$${Math.round(results.monthlyTotal).toLocaleString()}/mo`}
+                                text={`🏠 I found my dream home budget on SmartSaverCalc! My estimated monthly payment is $${Math.round(results.monthlyTotal).toLocaleString()}. Check yours:`}
                             />
                             <Button size="lg" variant="outline" className="flex-1 rounded-full h-14 font-bold">
                                 Download Amortization

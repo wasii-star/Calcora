@@ -120,8 +120,11 @@ export default function SolarROIPage() {
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
                             <ShareButton
-                                title="My Solar ROI on Calcora"
-                                text={`☀️ My solar payback is only ${results.paybackYears} years! Calcora shows I'll save $${Math.round(results.life20Savings).toLocaleString()} in 20 years. Check yours:`}
+                                title="My Solar ROI on SmartSaverCalc"
+                                results={results}
+                                calculatorName="Solar ROI"
+                                primaryValue={`${results.paybackYears} Year Payback`}
+                                text={`☀️ My solar payback is only ${results.paybackYears} years! SmartSaverCalc shows I'll save $${Math.round(results.life20Savings).toLocaleString()} in 20 years. Check yours:`}
                             />
                             <Button size="lg" variant="outline" className="rounded-full h-14 font-bold">
                                 Get Installation Tips

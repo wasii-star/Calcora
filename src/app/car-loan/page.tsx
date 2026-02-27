@@ -78,8 +78,11 @@ export default function CarLoanPage() {
                         <div className="flex gap-4 mt-8">
                             <ShareButton
                                 className="flex-1"
-                                title="My Car Loan Payment on Calcora"
-                                text={`🏎️ Just used Calcora to plan my car loan! My estimated monthly payment is $${Math.round(results.monthlyPayment).toLocaleString()}. Check it out:`}
+                                title="My Car Loan Payment on SmartSaverCalc"
+                                results={results}
+                                calculatorName="Car Loan Calculator"
+                                primaryValue={`$${Math.round(results.monthlyPayment).toLocaleString()}/mo`}
+                                text={`🏎️ Just used SmartSaverCalc to plan my car loan! My estimated monthly payment is $${Math.round(results.monthlyPayment).toLocaleString()}. Check it out:`}
                             />
                             <Button size="lg" variant="outline" className="flex-1 rounded-full h-14 font-bold">
                                 View Full Table

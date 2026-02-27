@@ -84,13 +84,16 @@ export default function DebtSnowballPage() {
                         </Card>
                     ))}
                 </div>
-                <AdPlaceholder type="rectangle" className="mt-12" />
+                <AdPlaceholder type="rectangle" className="my-12" />
 
                 <div className="flex gap-4 mt-12 justify-center max-w-sm mx-auto">
                     <ShareButton
                         className="w-full"
-                        title="My Debt Payoff Timeline on Calcora"
-                        text={`📉 I'll be debt-free in just ${results.months} months using the snowball method! See your payoff timeline on Calcora:`}
+                        title="My Debt Payoff Timeline on SmartSaverCalc"
+                        results={results}
+                        calculatorName="Debt Snowball"
+                        primaryValue={`${results.months} Months`}
+                        text={`📉 I'll be debt-free in just ${results.months} months using the snowball method! See your payoff timeline on SmartSaverCalc:`}
                     />
                 </div>
             </div>

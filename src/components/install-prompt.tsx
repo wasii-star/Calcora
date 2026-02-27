@@ -50,7 +50,7 @@ export function InstallPrompt() {
                         <Download className="h-5 w-5" />
                     </div>
                     <div>
-                        <p className="text-sm font-bold">Install Calcora App</p>
+                        <p className="text-sm font-bold">Install SmartSaverCalc App</p>
                         <p className="text-xs opacity-80">Access calculators faster from your home screen</p>
                     </div>
                 </div>

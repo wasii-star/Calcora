@@ -90,13 +90,16 @@ export default function RetirementPage() {
                             <CardHeader><CardTitle>Wealth Projection</CardTitle></CardHeader>
                             <CardContent className="h-[300px]"><Line data={chartData} options={{ maintainAspectRatio: false }} /></CardContent>
                         </Card>
-                        <AdPlaceholder type="rectangle" className="mt-8" />
+                        <AdPlaceholder type="rectangle" className="my-8" />
 
-                        <div className="flex gap-4 mt-8">
+                        <div className="flex gap-4">
                             <ShareButton
                                 className="flex-1"
-                                title="My FIRE Goal on Calcora"
-                                text={`🔥 I'm on track to retire with $${Math.round(results.finalBalance).toLocaleString()}! Calcora shows I've hit ${Math.round((results.finalBalance / results.targetFIRE) * 100)}% of my FIRE goal. Check yours:`}
+                                title="My FIRE Goal on SmartSaverCalc"
+                                results={results}
+                                calculatorName="FIRE Retirement"
+                                primaryValue={`$${Math.round(results.finalBalance).toLocaleString()}`}
+                                text={`🔥 I'm on track to retire with $${Math.round(results.finalBalance).toLocaleString()}! SmartSaverCalc shows I've hit ${Math.round((results.finalBalance / results.targetFIRE) * 100)}% of my FIRE goal. Check yours:`}
                             />
                             <Button size="lg" variant="outline" className="flex-1 rounded-full h-14 font-bold">
                                 Plan Contributions

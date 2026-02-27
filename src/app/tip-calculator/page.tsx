@@ -80,12 +80,15 @@ export default function TipPage() {
                     </div>
                 </div>
 
-                <AdPlaceholder type="rectangle" className="mt-12" />
+                <AdPlaceholder type="rectangle" className="my-12" />
 
                 <div className="mt-12 flex justify-center">
                     <ShareButton
-                        title="Split the bill with Calcora"
-                        text={`💸 Total per person: $${results.perPerson.toFixed(2)}. Calculated instantly with Calcora:`}
+                        title="Split the bill with SmartSaverCalc"
+                        results={results}
+                        calculatorName="Tip Calculator"
+                        primaryValue={`$${results.perPerson.toFixed(2)} ea`}
+                        text={`💸 Total per person: $${results.perPerson.toFixed(2)}. Calculated instantly with SmartSaverCalc:`}
                     />
                 </div>
             </div>

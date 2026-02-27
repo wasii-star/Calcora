@@ -1,6 +1,6 @@
 {
-    "name": "Calcora - Smart Life Calculators",
-    "short_name": "Calcora",
+    "name": "SmartSaverCalc - Smart Life Calculators",
+    "short_name": "SmartSaverCalc",
     "description": "Make smarter money & life decisions in seconds with our suite of free, professional-grade calculators.",
     "start_url": "/",
     "display": "standalone",

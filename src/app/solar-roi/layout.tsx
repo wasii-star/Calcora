@@ -3,9 +3,9 @@ import { Metadata } from "next";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-    title: "Free Solar ROI & Energy Savings Calculator 2026 | Calcora",
+    title: "Free Solar ROI & Energy Savings Calculator 2026 | SmartSaverCalc",
     description: "Calculate your solar panel payback period and 20-year energy savings. Fast and accurate solar ROI tool for 2026.",
-    keywords: ["solar roi calculator", "solar payback period", "solar panel savings", "renewable energy roi", "Calcora solar"],
+    keywords: ["solar roi calculator", "solar payback period", "solar panel savings", "renewable energy roi", "SmartSaverCalc solar"],
 };
 
 const jsonLd = {
@@ -13,7 +13,7 @@ const jsonLd = {
     "@type": "SoftwareApplication",
     "name": "Solar ROI & Energy Savings Calculator",
     "description": "Calculate solar panel payback periods and long-term energy savings.",
-    "url": "https://calcora-sandy.vercel.app/solar-roi",
+    "url": "https://smartsavercalc.com/solar-roi",
 };
 
 export default function SolarLayout({

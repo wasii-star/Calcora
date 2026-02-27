@@ -259,14 +259,16 @@ export default function EVSavingsPage() {
                             </CardFooter>
                         </Card>
 
-                        {/* Rectangle Ad before share buttons */}
-                        <AdPlaceholder type="rectangle" className="my-6" />
+                        <AdPlaceholder type="rectangle" className="my-8" />
 
                         <div className="flex gap-4">
                             <ShareButton
                                 className="flex-1"
-                                title="My EV Savings on Calcora"
-                                text={`🚀 I'll save $${Math.round(results.totalSavings).toLocaleString()} in ${years} years by switching to an EV! Calculate yours on Calcora:`}
+                                title="My EV Savings on SmartSaverCalc"
+                                results={results}
+                                calculatorName="EV Savings"
+                                primaryValue={`$${Math.round(results.totalSavings).toLocaleString()} Savings`}
+                                text={`🚀 I'll save $${Math.round(results.totalSavings).toLocaleString()} in ${years} years by switching to an EV! Calculate yours on SmartSaverCalc:`}
                             />
                             <Button variant="outline" className="flex-1 rounded-full h-12 text-base font-semibold">
                                 Download PDF Report

@@ -7,7 +7,7 @@ export default function PrivacyPage() {
             <section className="space-y-4">
                 <h2 className="text-2xl font-bold">1. Data Collection</h2>
                 <p className="text-muted-foreground">
-                    Calcora does not collect, store, or transmit any personal financial information entered into our calculators. All calculations are performed on your local device.
+                    SmartSaverCalc does not collect, store, or transmit any personal financial information entered into our calculators. All calculations are performed on your local device.
                 </p>
             </section>
 
@@ -21,7 +21,7 @@ export default function PrivacyPage() {
             <section className="space-y-4">
                 <h2 className="text-2xl font-bold">3. Contact</h2>
                 <p className="text-muted-foreground">
-                    If you have questions about this policy, please contact us at privacy@calcora.com.
+                    If you have questions about this policy, please contact us at privacy@smartsavercalc.com.
                 </p>
             </section>
         </div>

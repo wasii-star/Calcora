@@ -1,6 +1,6 @@
 import { MetadataRoute } from "next";
 
-const BASE_URL = "https://calcora-sandy.vercel.app";
+const BASE_URL = "https://smartsavercalc.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const routes = [

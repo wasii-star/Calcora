@@ -35,7 +35,7 @@ export function CookieConsent() {
                     <div className="flex items-center gap-3 flex-1">
                         <ShieldCheck className="h-5 w-5 text-primary shrink-0" />
                         <p className="text-sm text-muted-foreground">
-                            We use cookies and ads to keep Calcora free. Your calculator data never leaves your browser.
+                            We use cookies and ads to keep SmartSaverCalc free. Your calculator data never leaves your browser.
                         </p>
                     </div>
                     <Button

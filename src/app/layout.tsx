@@ -5,8 +5,9 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { ModeToggle } from "@/components/mode-toggle";
 import { GoogleAnalytics } from "@/components/google-analytics";
 import { CookieConsent } from "@/components/cookie-consent";
-import { Calculator } from "lucide-react";
+import { Calculator, Menu } from "lucide-react";
 import Link from "next/link";
+import { InstallPrompt } from "@/components/install-prompt";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,7 +27,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Calcora | Smart Life Calculators for 2026",
+  title: "SmartSaverCalc | Smart Life Calculators for 2026",
   description: "Modern, fast, and private calculators for EV savings, mortgages, retirement, health, and more. 100% free and mobile-ready.",
   manifest: "/manifest.json",
   icons: {
@@ -36,7 +37,7 @@ export const metadata: Metadata = {
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: "Calcora",
+    title: "SmartSaverCalc",
   },
 };
 
@@ -64,17 +65,20 @@ export default function RootLayout({
                   <Calculator className="h-6 w-6" />
                 </div>
                 <span className="text-xl font-bold tracking-tight text-foreground sm:text-2xl">
-                  Calcora
+                  SmartSaverCalc
                 </span>
               </Link>
               <div className="flex items-center gap-4">
-                <nav className="hidden lg:flex items-center gap-6 text-sm font-medium">
-                  <Link href="/" className="text-muted-foreground transition-colors hover:text-primary font-semibold">Home</Link>
-                  <Link href="/ev-savings" className="text-muted-foreground transition-colors hover:text-primary">EV Savings</Link>
-                  <Link href="/mortgage-calculator" className="text-muted-foreground transition-colors hover:text-primary">Mortgage</Link>
-                  <Link href="/solar-roi" className="text-muted-foreground transition-colors hover:text-primary">Solar ROI</Link>
-                  <Link href="/fire-retirement" className="text-muted-foreground transition-colors hover:text-primary">Retirement</Link>
-                  <Link href="/about" className="text-muted-foreground transition-colors hover:text-primary">About</Link>
+                <nav className="hidden lg:flex items-center gap-4 text-[13px] font-medium overflow-x-auto no-scrollbar py-2">
+                  <Link href="/" className="text-muted-foreground transition-colors hover:text-primary font-semibold shrink-0">Home</Link>
+                  <Link href="/ev-savings" className="text-muted-foreground transition-colors hover:text-primary shrink-0">EV Savings</Link>
+                  <Link href="/mortgage-calculator" className="text-muted-foreground transition-colors hover:text-primary shrink-0">Mortgage Calculator</Link>
+                  <Link href="/solar-roi" className="text-muted-foreground transition-colors hover:text-primary shrink-0">Solar ROI</Link>
+                  <Link href="/car-loan" className="text-muted-foreground transition-colors hover:text-primary shrink-0">Car Loan</Link>
+                  <Link href="/fire-retirement" className="text-muted-foreground transition-colors hover:text-primary shrink-0">FIRE Retirement</Link>
+                  <Link href="/debt-snowball" className="text-muted-foreground transition-colors hover:text-primary shrink-0">Debt Snowball</Link>
+                  <Link href="/bmi-calories" className="text-muted-foreground transition-colors hover:text-primary shrink-0">BMI & Calories</Link>
+                  <Link href="/tip-calculator" className="text-muted-foreground transition-colors hover:text-primary shrink-0">Tip Calculator</Link>
                 </nav>
                 <div className="h-4 w-px bg-border hidden md:block" />
                 <ModeToggle />
@@ -92,10 +96,10 @@ export default function RootLayout({
                 <div className="space-y-4 col-span-1 md:col-span-2">
                   <div className="flex items-center gap-2">
                     <Calculator className="h-5 w-5 text-primary" />
-                    <span className="font-bold text-lg">Calcora</span>
+                    <span className="font-bold text-lg">SmartSaverCalc</span>
                   </div>
                   <p className="text-sm text-muted-foreground max-w-xs leading-relaxed">
-                    Calcora helps you make smarter life and money decisions in seconds. Our professional-grade tools are accurate, free, and built for your privacy.
+                    SmartSaverCalc helps you make smarter life and money decisions in seconds. Our professional-grade tools are accurate, free, and built for your privacy.
                   </p>
                 </div>
                 <div className="space-y-4">
@@ -117,15 +121,16 @@ export default function RootLayout({
               </div>
               <div className="mt-12 pt-8 border-t space-y-4">
                 <p className="text-center text-[11px] text-muted-foreground/50 leading-relaxed">
-                  We use ads to keep Calcora free. Your calculator data never leaves your browser.
+                  We use ads to keep SmartSaverCalc free. Your calculator data never leaves your browser.
                 </p>
                 <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-muted-foreground">
-                  <p>&copy; 2026 Calcora. All rights reserved.</p>
+                  <p>&copy; 2026 SmartSaverCalc.com &ndash; Free tools to save money</p>
                   <p>Designed for Vercel • US Market Priority</p>
                 </div>
               </div>
             </div>
           </footer>
+          <InstallPrompt />
           <CookieConsent />
         </ThemeProvider>
       </body>

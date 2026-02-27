@@ -3,9 +3,9 @@ import { Metadata } from "next";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-    title: "Free BMI & Daily Calorie Calculator 2026 | Calcora",
-    description: "Calculate your BMI and daily calorie needs (TDEE). Get accurate targets for weight maintenance or loss with Calcora's 2026 health tools.",
-    keywords: ["bmi calculator", "calorie needs calculator", "tdee calculator", "health tracker", "Calcora bmi"],
+    title: "Free BMI & Daily Calorie Calculator 2026 | SmartSaverCalc",
+    description: "Calculate your BMI and daily calorie needs (TDEE). Get accurate targets for weight maintenance or loss with SmartSaverCalc's 2026 health tools.",
+    keywords: ["bmi calculator", "calorie needs calculator", "tdee calculator", "health tracker", "SmartSaverCalc bmi"],
 };
 
 const jsonLd = {
@@ -14,7 +14,7 @@ const jsonLd = {
     "name": "BMI & Daily Calorie Calculator",
     "applicationCategory": "HealthApplication",
     "description": "Calculate Body Mass Index and daily calorie requirements.",
-    "url": "https://calcora-sandy.vercel.app/bmi-calories",
+    "url": "https://smartsavercalc.com/bmi-calories",
 };
 
 export default function BMILayout({

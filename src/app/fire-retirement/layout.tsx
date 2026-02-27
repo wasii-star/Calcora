@@ -2,9 +2,9 @@ import { Metadata } from "next";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-    title: "Free FIRE & Early Retirement Calculator 2026 | Calcora",
-    description: "Calculate your path to financial independence and early retirement (FIRE). Track savings and investment returns with Calcora.",
-    keywords: ["retirement calculator", "FIRE calculator", "financial independence", "retirement savings tracker", "Calcora FIRE"],
+    title: "Free FIRE & Early Retirement Calculator 2026 | SmartSaverCalc",
+    description: "Calculate your path to financial independence and early retirement (FIRE). Track savings and investment returns with SmartSaverCalc.",
+    keywords: ["retirement calculator", "FIRE calculator", "financial independence", "retirement savings tracker", "SmartSaverCalc FIRE"],
 };
 
 const jsonLd = {
@@ -12,7 +12,7 @@ const jsonLd = {
     "@type": "FinancialCalculator",
     "name": "FIRE & Early Retirement Calculator",
     "description": "Calculate age and savings required to reach financial independence (FIRE).",
-    "url": "https://calcora-sandy.vercel.app/fire-retirement",
+    "url": "https://smartsavercalc.com/fire-retirement",
 };
 
 export default function FIRELayout({

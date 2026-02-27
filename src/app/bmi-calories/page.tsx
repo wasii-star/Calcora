@@ -90,13 +90,16 @@ export default function BMIPage() {
                                 <p className="mt-4 text-xs text-muted-foreground leading-relaxed">This is the average number of calories you burn per day. Eat this amount to maintain your current weight.</p>
                             </CardContent>
                         </Card>
-                        <AdPlaceholder type="rectangle" className="mt-8" />
+                        <AdPlaceholder type="rectangle" className="my-8" />
 
                         <div className="flex gap-4 mt-8">
                             <ShareButton
                                 className="flex-1"
-                                title="My Health Profile on Calcora"
-                                text={`💪 My BMI is ${results.bmi} and my daily calorie target is ${results.tdee.toLocaleString()}! Calculate yours on Calcora:`}
+                                title="My Health Profile on SmartSaverCalc"
+                                results={results}
+                                calculatorName="BMI & Calories"
+                                primaryValue={`BMI: ${results.bmi}`}
+                                text={`💪 My BMI is ${results.bmi} and my daily calorie target is ${results.tdee.toLocaleString()}! Calculate yours on SmartSaverCalc:`}
                             />
                         </div>
                     </div>

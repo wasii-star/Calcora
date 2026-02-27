@@ -3,9 +3,9 @@ import { Metadata } from "next";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-    title: "Free Mortgage Affordability & Payment Calculator 2026 | Calcora",
-    description: "Calculate home affordability and monthly mortgage payments. See how interest rates affect your budget with Calcora's free 2026 mortgage tool.",
-    keywords: ["mortgage calculator", "home affordability", "monthly mortgage payment", "DTI ratio calculator", "Calcora mortgage"],
+    title: "Free Mortgage Affordability & Payment Calculator 2026 | SmartSaverCalc",
+    description: "Calculate home affordability and monthly mortgage payments. See how interest rates affect your budget with SmartSaverCalc's free 2026 mortgage tool.",
+    keywords: ["mortgage calculator", "home affordability", "monthly mortgage payment", "DTI ratio calculator", "SmartSaverCalc mortgage"],
 };
 
 const jsonLd = {
@@ -13,7 +13,7 @@ const jsonLd = {
     "@type": "FinancialCalculator",
     "name": "Mortgage Affordability & Payment Calculator",
     "description": "Calculate home affordability and monthly mortgage payments based on income, debt, and interest rates.",
-    "url": "https://calcora-sandy.vercel.app/mortgage-calculator",
+    "url": "https://smartsavercalc.com/mortgage-calculator",
 };
 
 export default function MortgageLayout({

@@ -2,9 +2,9 @@ import { Metadata } from "next";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-    title: "Free Tip Calculator & Bill Splitter 2026 | Calcora",
-    description: "Calculate tips and split bills instantly between any number of people. Fast, smart, and free for group dining with Calcora.",
-    keywords: ["tip calculator", "bill splitter", "percentage calculator", "dining tip tool", "Calcora tip"],
+    title: "Free Tip Calculator & Bill Splitter 2026 | SmartSaverCalc",
+    description: "Calculate tips and split bills instantly between any number of people. Fast, smart, and free for group dining with SmartSaverCalc.",
+    keywords: ["tip calculator", "bill splitter", "percentage calculator", "dining tip tool", "SmartSaverCalc tip"],
 };
 
 const jsonLd = {
@@ -13,7 +13,7 @@ const jsonLd = {
     "name": "Tip Calculator & Bill Splitter",
     "applicationCategory": "UtilitiesApplication",
     "description": "Quickly calculate tips and split dinner bills between friends.",
-    "url": "https://calcora-sandy.vercel.app/tip-calculator",
+    "url": "https://smartsavercalc.com/tip-calculator",
 };
 
 export default function TipLayout({

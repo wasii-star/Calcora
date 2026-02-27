@@ -6,14 +6,14 @@ export default function TermsPage() {
             <section className="space-y-4">
                 <h2 className="text-2xl font-bold">1. Use of Tools</h2>
                 <p className="text-muted-foreground">
-                    Calcora's tools are provided for informational and estimation purposes only. They do not constitute financial, legal, or professional advice. Always consult with a certified professional before making significant life or financial decisions.
+                    SmartSaverCalc's tools are provided for informational and estimation purposes only. They do not constitute financial, legal, or professional advice. Always consult with a certified professional before making significant life or financial decisions.
                 </p>
             </section>
 
             <section className="space-y-4">
                 <h2 className="text-2xl font-bold">2. Accurate Data</h2>
                 <p className="text-muted-foreground">
-                    While we strive for 100% accuracy, Calcora is not liable for errors in calculations or data provided by the user.
+                    While we strive for 100% accuracy, SmartSaverCalc is not liable for errors in calculations or data provided by the user.
                 </p>
             </section>
         </div>

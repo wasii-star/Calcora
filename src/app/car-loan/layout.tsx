@@ -3,9 +3,9 @@ import { Metadata } from "next";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-    title: "Free Auto Loan & Car Payment Calculator 2026 | Calcora",
-    description: "Calculate monthly car payments and total interest for your next vehicle purchase. Accurate auto loan planning for 2026 with Calcora.",
-    keywords: ["car loan calculator", "auto finance calculator", "monthly car payment", "vehicle loan interest", "Calcora car loan"],
+    title: "Free Auto Loan & Car Payment Calculator 2026 | SmartSaverCalc",
+    description: "Calculate monthly car payments and total interest for your next vehicle purchase. Accurate auto loan planning for 2026 with SmartSaverCalc.",
+    keywords: ["car loan calculator", "auto finance calculator", "monthly car payment", "vehicle loan interest", "SmartSaverCalc car loan"],
 };
 
 const jsonLd = {
@@ -13,7 +13,7 @@ const jsonLd = {
     "@type": "FinancialCalculator",
     "name": "Auto Loan & Car Payment Calculator",
     "description": "Calculate monthly car payments and total interest for vehicle loans.",
-    "url": "https://calcora-sandy.vercel.app/car-loan",
+    "url": "https://smartsavercalc.com/car-loan",
 };
 
 export default function CarLoanLayout({
