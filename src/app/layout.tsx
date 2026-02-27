@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     title: "SmartSaverCalc",
   },
   other: {
-    "google-site-verification": "ca-pub-5674833371324579",
+    "google-adsense-account": "ca-pub-5674833371324579",
   },
 };
 
