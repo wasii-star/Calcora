@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 interface AdPlaceholderProps {
     type: "leaderboard" | "rectangle" | "skyscraper";
@@ -8,38 +8,54 @@ interface AdPlaceholderProps {
 }
 
 export function AdPlaceholder({ type, className = "" }: AdPlaceholderProps) {
+    const adRef = useRef<HTMLDivElement>(null);
+    const pushed = useRef(false);
+
     const config = {
         leaderboard: {
-            size: "728×90",
-            desktop: "min-h-[90px] w-full max-w-[728px]",
-            label: "Leaderboard Ad",
+            style: { display: "inline-block", width: "728px", height: "90px" } as React.CSSProperties,
+            wrapper: "min-h-[90px] w-full max-w-[728px]",
         },
         rectangle: {
-            size: "300×250",
-            desktop: "min-h-[250px] w-full max-w-[300px]",
-            label: "Rectangle Ad",
+            style: { display: "inline-block", width: "300px", height: "250px" } as React.CSSProperties,
+            wrapper: "min-h-[250px] w-full max-w-[300px]",
         },
         skyscraper: {
-            size: "160×600",
-            desktop: "min-h-[600px] w-full max-w-[160px]",
-            label: "Skyscraper Ad",
+            style: { display: "inline-block", width: "160px", height: "600px" } as React.CSSProperties,
+            wrapper: "min-h-[600px] w-full max-w-[160px]",
         },
     };
 
-    const { size, desktop, label } = config[type];
+    const { style, wrapper } = config[type];
+
+    useEffect(() => {
+        if (pushed.current) return;
+        try {
+            if (typeof window !== "undefined" && (window as any).adsbygoogle) {
+                (window as any).adsbygoogle.push({});
+                pushed.current = true;
+            }
+        } catch (e) {
+            console.error("AdSense push error:", e);
+        }
+    }, []);
 
     return (
         <div className={`mx-auto ${className}`}>
-            {/* ADSENSE PLACEHOLDER - PASTE CODE HERE */}
             <div
-                className={`flex items-center justify-center rounded-xl border border-dashed border-border/50 bg-muted/20 p-4 text-[10px] text-muted-foreground/60 uppercase tracking-[0.15em] font-medium select-none ${desktop}`}
+                ref={adRef}
+                className={`flex items-center justify-center ${wrapper}`}
                 role="complementary"
                 aria-label="Advertisement"
             >
-                <span className="text-center leading-relaxed">
-                    {label}<br />
-                    <span className="text-[9px] opacity-60">{size}</span>
-                </span>
+                {/* ADSENSE AD UNIT */}
+                <ins
+                    className="adsbygoogle"
+                    style={style}
+                    data-ad-client="ca-pub-4485720965165895"
+                    data-ad-format="auto"
+                    data-full-width-responsive="true"
+                />
             </div>
         </div>
     );
