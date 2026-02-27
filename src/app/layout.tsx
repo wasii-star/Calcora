@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     title: "SmartSaverCalc",
   },
   other: {
-    "google-site-verification": "ca-pub-4485720965165895",
+    "google-site-verification": "ca-pub-5674833371324579",
   },
 };
 
@@ -58,7 +58,7 @@ export default function RootLayout({
         <GoogleAnalytics />
         <Script
           async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4485720965165895"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5674833371324579"
           crossOrigin="anonymous"
           strategy="afterInteractive"
         />

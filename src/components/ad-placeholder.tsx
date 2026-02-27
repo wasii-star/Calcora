@@ -52,7 +52,7 @@ export function AdPlaceholder({ type, className = "" }: AdPlaceholderProps) {
                 <ins
                     className="adsbygoogle"
                     style={style}
-                    data-ad-client="ca-pub-4485720965165895"
+                    data-ad-client="ca-pub-5674833371324579"
                     data-ad-format="auto"
                     data-full-width-responsive="true"
                 />
