@@ -9,7 +9,6 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { calculateCarLoan, CarLoanResult } from "@/lib/calculations";
-import { AdPlaceholder } from "@/components/ad-placeholder";
 import { ShareButton } from "@/components/share-button";
 import { CalculatorLayoutWrapper } from "@/components/calculator-layout-wrapper";
 
@@ -73,7 +72,6 @@ export default function CarLoanPage() {
                                 <div className="flex justify-between py-2"><span>Total Payment</span><span className="font-bold">${Math.round(results.totalCost).toLocaleString()}</span></div>
                             </CardContent>
                         </Card>
-                        <AdPlaceholder type="rectangle" className="mt-8" />
 
                         <div className="flex gap-4 mt-8">
                             <ShareButton

@@ -8,7 +8,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { calculateTip } from "@/lib/calculations";
-import { AdPlaceholder } from "@/components/ad-placeholder";
 import { ShareButton } from "@/components/share-button";
 import { CalculatorLayoutWrapper } from "@/components/calculator-layout-wrapper";
 
@@ -80,7 +79,6 @@ export default function TipPage() {
                     </div>
                 </div>
 
-                <AdPlaceholder type="rectangle" className="my-12" />
 
                 <div className="mt-12 flex justify-center">
                     <ShareButton

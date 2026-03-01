@@ -9,7 +9,6 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { calculateRetirement } from "@/lib/calculations";
-import { AdPlaceholder } from "@/components/ad-placeholder";
 import { ShareButton } from "@/components/share-button";
 import { CalculatorLayoutWrapper } from "@/components/calculator-layout-wrapper";
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, Filler } from 'chart.js';
@@ -90,7 +89,6 @@ export default function RetirementPage() {
                             <CardHeader><CardTitle>Wealth Projection</CardTitle></CardHeader>
                             <CardContent className="h-[300px]"><Line data={chartData} options={{ maintainAspectRatio: false }} /></CardContent>
                         </Card>
-                        <AdPlaceholder type="rectangle" className="my-8" />
 
                         <div className="flex gap-4">
                             <ShareButton

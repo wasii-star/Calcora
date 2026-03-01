@@ -14,7 +14,6 @@ import {
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { AdPlaceholder } from "@/components/ad-placeholder";
 import { InstallPrompt } from "@/components/install-prompt";
 
 const calculators = [
@@ -108,12 +107,6 @@ export default function Home() {
         </div>
       </section>
 
-
-      {/* Leaderboard Ad after Hero */}
-      <section className="container mx-auto px-4 sm:px-8 -mt-10">
-        <AdPlaceholder type="leaderboard" />
-      </section>
-
       {/* Calculator Grid */}
       <section id="calculators" className="container mx-auto px-4 sm:px-8">
         <div className="flex flex-col md:flex-row justify-between items-end gap-6 mb-12">
@@ -129,7 +122,7 @@ export default function Home() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {calculators.map((calc) => (
             <Link key={calc.title} href={calc.href} className="group">
-              <Card className="h-full border-2 transition-all duration-300 hover:border-primary hover:shadow-[0_20px_50px_rgba(79,70,229,0.15)] hover:scale-105 rounded-[2rem] overflow-hidden">
+              <Card className="h-full border-2 transition-all duration-300 hover:border-primary hover:shadow-[0_20px_50_rgba(79,70,229,0.15)] hover:scale-105 rounded-[2rem] overflow-hidden">
                 <CardHeader className="space-y-6 p-8">
                   <div className={`p-4 w-fit rounded-2xl ${calc.color} transition-all duration-500 group-hover:rotate-6 group-hover:scale-110 shadow-sm`}>
                     <calc.icon className="h-8 w-8" />
@@ -195,11 +188,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
-
-      {/* Bottom Leaderboard Ad */}
-      <section className="container mx-auto px-4 sm:px-8">
-        <AdPlaceholder type="leaderboard" />
       </section>
     </div>
   );

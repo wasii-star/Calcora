@@ -9,7 +9,6 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { calculateBMI } from "@/lib/calculations";
-import { AdPlaceholder } from "@/components/ad-placeholder";
 import { ShareButton } from "@/components/share-button";
 import { CalculatorLayoutWrapper } from "@/components/calculator-layout-wrapper";
 
@@ -90,7 +89,6 @@ export default function BMIPage() {
                                 <p className="mt-4 text-xs text-muted-foreground leading-relaxed">This is the average number of calories you burn per day. Eat this amount to maintain your current weight.</p>
                             </CardContent>
                         </Card>
-                        <AdPlaceholder type="rectangle" className="my-8" />
 
                         <div className="flex gap-4 mt-8">
                             <ShareButton

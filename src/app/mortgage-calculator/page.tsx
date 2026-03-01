@@ -20,7 +20,6 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
 import { calculateMortgage, MortgageResult } from "@/lib/calculations";
-import { AdPlaceholder } from "@/components/ad-placeholder";
 import { ShareButton } from "@/components/share-button";
 import { CalculatorLayoutWrapper } from "@/components/calculator-layout-wrapper";
 import {
@@ -217,7 +216,6 @@ export default function MortgagePage() {
                             </Card>
                         </div>
 
-                        <AdPlaceholder type="rectangle" className="my-8" />
 
                         <div className="flex gap-4">
                             <ShareButton
