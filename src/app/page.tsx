@@ -15,6 +15,13 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { InstallPrompt } from "@/components/install-prompt";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "SmartSaverCalc | Free 2026 Financial & Life Calculators",
+  description: "Access a professional suite of free 2026 calculators for EV savings, mortgages, car loans, retirement, and health. Private, fast, and accurate tools for smart decisions.",
+  keywords: ["free finance calculators 2026", "mortgage affordability tool", "EV savings calculator", "solar roi tool", "retirement planning calculator", "BMI health calculator"],
+};
 
 const calculators = [
   {
@@ -150,42 +157,49 @@ export default function Home() {
       <section className="bg-muted/50 py-24 border-y">
         <div className="container mx-auto px-4 sm:px-8">
           <div className="text-center mb-16 space-y-4">
-            <h2 className="text-3xl font-bold sm:text-4xl lg:text-5xl tracking-tight">Why use SmartSaverCalc?</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              We built SmartSaverCalc to be the most beautiful and accurate toolset on the web.
+            <h2 className="text-3xl font-bold sm:text-4xl lg:text-5xl tracking-tight">The Smartest Way to Calculate in 2026</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto text-lg leading-relaxed">
+              SmartSaverCalc provides a professional-grade suite of financial and lifestyle tools designed for the modern web. From **mortgage affordability** to **EV cost comparisons**, our goal is to empower your decisions with data you can trust.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="p-8 rounded-3xl bg-background border shadow-sm space-y-4 transition-all hover:shadow-lg">
-              <div className="h-12 w-12 rounded-2xl bg-primary/10 flex items-center justify-center">
-                <ShieldCheck className="h-6 w-6 text-primary" />
+              <div className="h-14 w-14 rounded-2xl bg-indigo-500/10 flex items-center justify-center">
+                <ShieldCheck className="h-8 w-8 text-indigo-600" />
               </div>
-              <h3 className="text-xl font-bold">Privacy First</h3>
+              <h3 className="text-2xl font-bold">100% Privacy</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Your data stays in your browser. We don't track your calculations or sell your information. 100% private.
+                Your financial data belongs to you. Unlike other sites, we don't store your inputs or sell your information to advertisers. Every calculation happens locally in your browser.
               </p>
             </div>
 
             <div className="p-8 rounded-3xl bg-background border shadow-sm space-y-4 transition-all hover:shadow-lg">
-              <div className="h-12 w-12 rounded-2xl bg-primary/10 flex items-center justify-center">
-                <CheckCircle2 className="h-6 w-6 text-primary" />
+              <div className="h-14 w-14 rounded-2xl bg-emerald-500/10 flex items-center justify-center">
+                <CheckCircle2 className="h-8 w-8 text-emerald-600" />
               </div>
-              <h3 className="text-xl font-bold">Verified Accuracy</h3>
+              <h3 className="text-2xl font-bold">2026 Market Data</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Our formulas are updated for 2026. We use the latest energy prices, tax credits, and market trends.
+                Our tools are pre-calibrated with the latest 2026 economic data, including updated **tax credits for solar**, the latest **EV efficiency ratings**, and current **mortgage interest rate benchmarks**.
               </p>
             </div>
 
             <div className="p-8 rounded-3xl bg-background border shadow-sm space-y-4 transition-all hover:shadow-lg">
-              <div className="h-12 w-12 rounded-2xl bg-primary/10 flex items-center justify-center">
-                <Zap className="h-6 w-6 text-primary" />
+              <div className="h-14 w-14 rounded-2xl bg-orange-500/10 flex items-center justify-center">
+                <Zap className="h-8 w-8 text-orange-600" />
               </div>
-              <h3 className="text-xl font-bold">Blazing Fast</h3>
+              <h3 className="text-2xl font-bold">Real-Time Insight</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Built with Next.js 15 for instant loading. Get results as you type with zero delay or page reloads.
+                Experience zero-latency calculations. See how changing your down payment or annual mileage affects your long-term wealth instantly with our high-definition charts.
               </p>
             </div>
+          </div>
+
+          <div className="mt-20 pt-16 border-t text-center space-y-8 max-w-3xl mx-auto">
+            <h3 className="text-3xl font-bold tracking-tight">Global Accessibility</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              SmartSaverCalc is used by thousands of home buyers, car shoppers, and health enthusiasts looking for clarity. Whether you're planning for retirement or just splitting a bill, our cross-platform tools work perfectly on mobile, tablet, and desktop.
+            </p>
           </div>
         </div>
       </section>

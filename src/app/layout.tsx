@@ -33,12 +33,34 @@ export const metadata: Metadata = {
   manifest: "/manifest.json",
   icons: {
     icon: "/logo.png",
+    shortcut: "/logo.png",
     apple: "/logo.png",
   },
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
     title: "SmartSaverCalc",
+  },
+  openGraph: {
+    title: "SmartSaverCalc | Smart Life Calculators for 2026",
+    description: "Modern, fast, and private calculators for EV savings, mortgages, retirement, health, and more. 100% free.",
+    url: "https://smartsavercalc.com",
+    siteName: "SmartSaverCalc",
+    images: [
+      {
+        url: "/logo.png",
+        width: 512,
+        height: 512,
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SmartSaverCalc | 2026 Life Calculators",
+    description: "100% free professional-grade tools for your money and life decisions.",
+    images: ["/logo.png"],
   },
   other: {
     "google-adsense-account": "ca-pub-5674833371324579",
@@ -72,8 +94,8 @@ export default function RootLayout({
           <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
             <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-8">
               <Link href="/" className="flex items-center gap-2 transition-opacity hover:opacity-80">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-primary-foreground shadow-lg shadow-primary/20">
-                  <Calculator className="h-6 w-6" />
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary shadow-lg shadow-primary/20 overflow-hidden">
+                  <img src="/logo.png" alt="SmartSaverCalc Logo" className="h-7 w-7 object-contain" />
                 </div>
                 <span className="text-xl font-bold tracking-tight text-foreground sm:text-2xl">
                   SmartSaverCalc
@@ -106,7 +128,7 @@ export default function RootLayout({
               <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
                 <div className="space-y-4 col-span-1 md:col-span-2">
                   <div className="flex items-center gap-2">
-                    <Calculator className="h-5 w-5 text-primary" />
+                    <img src="/logo.png" alt="SmartSaverCalc Logo" className="h-6 w-6 object-contain" />
                     <span className="font-bold text-lg">SmartSaverCalc</span>
                   </div>
                   <p className="text-sm text-muted-foreground max-w-xs leading-relaxed">
